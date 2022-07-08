@@ -1,0 +1,74 @@
+
+
+<div class="model">
+    <!-- Contact Form -->
+    <div class="contact-form-two">
+        <div class="title-box">
+            <h4>Make an Appointment</h4>
+            <div class="text">We provide the most full medical services, so every person could have the <br>oportunity to receive qualitative medical help.</div>
+        </div>
+        <form method="post" action="setappointment.php" id="contact-form">
+            <div class="row clearfix">
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input type="text" name="username" placeholder="Your Name" required="">
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input type="text" name="phone" placeholder="Your Phone" required="">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input type="email" name="email" placeholder="Email Address" required="">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <select name="departments" id="departments" onchange="appointment();" required>
+                        <option value="default" selected disabled>Select Departments</option>
+                        <option value="emergency">Emergency and ICU Services</option>
+                        <option value="obstetrics">Obstetrics and Gynaecology</option>
+                        <option value="radiology">Radiology</option>
+                        <option value="orthopaedics">Orthopaedics Surgery and Joint Replacement</option>
+                        <option value="general">General Physician</option>
+                        <option value="pathology">Pathology Lab Services</option>
+                        <option value="paediatrics">Paediatrics and Neonatology</option>
+                        <option value="dermatology">Dermatology</option>
+                        <option value="pulmonology">Pulmonology</option>
+                        <option value="physiotherapy">Physiotherapy</option>
+                        <option value="general">General Surgery </option>
+                        <option value="dietetics">Dietetics</option>
+                        <option value="dental">Dental</option>
+                        <option value="neurosurgery">Neurosurgery</option>
+                        <option value="ophthalmology">Ophthalmology </option>
+                        <option value="gastroenterology">Gastroenterology</option>
+                        <option value="anaesthesiology">Anaesthesiology</option>
+                        <option value="dialysis">Dialysis</option>
+                        <option value="pharmacy">Pharmacy</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input type="date" name="date" placeholder="Select Date" required="" >
+                </div>
+
+                
+                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                    <textarea name="message" placeholder="Message" required=""></textarea>
+                </div>
+                
+                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                    <button class="theme-btn btn-style-three small" type="submit" name="submit-form"><span class="btn-title">Submit Now</span></button>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                function appointment(){
+                    var departments = jQuery('#departments option:selected').val();
+                    jQuery('#timing option').hide();
+                    jQuery('#timing option[data-value='+departments+']').show();
+                }
+                appointment();
+            </script>
+        </form>
+    </div>
+</div>
+
