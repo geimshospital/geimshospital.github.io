@@ -86,25 +86,25 @@
                                     <span>Services</span>
                                     <ul>
                                         <li><a href="departments.html">All Services</a></li>
-                                        <li><a href="department/emergency.html">Emergency and ICU Services</a></li>
-                                        <li><a href="department/obstetrics.html">Obstetrics and Gynaecology</a></li>
-                                        <li><a href="department/radiology.html">Radiology</a></li>
-                                        <li><a href="department/orthopaedics.html">Orthopaedics Surgery and Joint Replacement</a></li>
-                                        <li><a href="department/general.html">General Physician</a></li>
-                                        <li><a href="department/pathology.html">Pathology Lab Services</a></li>
-                                        <li><a href="department/paediatrics.html">Paediatrics and Neonatology</a></li>
-                                        <li><a href="department/dermatology.html">Dermatology</a></li>
-                                        <li><a href="department/pulmonology.html">Pulmonology</a></li>
-                                        <li><a href="department/physiotherapy.html">Physiotherapy</a></li>
-                                        <li><a href="department/general.html">General Surgery </a></li>
-                                        <li><a href="department/dietetics.html">Dietetics</a></li>
-                                        <li><a href="department/dental.html">Dental</a></li>
-                                        <li><a href="department/neurosurgery.html">Neurosurgery</a></li>
-                                        <li><a href="department/ophthalmology.html">Ophthalmology </a></li>
-                                        <li><a href="department/gastroenterology.html">Gastroenterology</a></li>
-                                        <li><a href="department/anaesthesiology.html">Anaesthesiology</a></li>
-                                        <li><a href="department/dialysis.html">Dialysis</a></li>
-                                        <li><a href="department/pharmacy.html">Pharmacy</a></li>
+                                        <li><a href="emergency.html">Emergency and ICU Services</a></li>
+                                        <li><a href="obstetrics.html">Obstetrics and Gynaecology</a></li>
+                                        <li><a href="radiology.html">Radiology</a></li>
+                                        <li><a href="orthopaedics.html">Orthopaedics Surgery and Joint Replacement</a></li>
+                                        <li><a href="general.html">General Physician</a></li>
+                                        <li><a href="pathology.html">Pathology Lab Services</a></li>
+                                        <li><a href="paediatrics.html">Paediatrics and Neonatology</a></li>
+                                        <li><a href="dermatology.html">Dermatology</a></li>
+                                        <li><a href="pulmonology.html">Pulmonology</a></li>
+                                        <li><a href="physiotherapy.html">Physiotherapy</a></li>
+                                        <li><a href="general.html">General Surgery </a></li>
+                                        <li><a href="dietetics.html">Dietetics</a></li>
+                                        <li><a href="dental.html">Dental</a></li>
+                                        <li><a href="neurosurgery.html">Neurosurgery</a></li>
+                                        <li><a href="ophthalmology.html">Ophthalmology </a></li>
+                                        <li><a href="gastroenterology.html">Gastroenterology</a></li>
+                                        <li><a href="anaesthesiology.html">Anaesthesiology</a></li>
+                                        <li><a href="dialysis.html">Dialysis</a></li>
+                                        <li><a href="pharmacy.html">Pharmacy</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="careers.html">Careers</a></li>
@@ -230,32 +230,32 @@
                     <form action="#" method="post" id="email-form">
                         <div class="row">
                             <div class="form-group col-lg-12">
-                                <div class="response"></div>
+                                <div class="response" id="contact-response"></div>
                             </div>
 
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <input type="text" name="username" class="username" placeholder="Full Name *">
+                                    <input type="text" name="username" id="getName" class="username" placeholder="Full Name *">
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="email" name="email" class="email" placeholder="Email Address *">
+                                    <input type="email" name="email" id="getEmail" class="email" placeholder="Email Address *">
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" name="username" class="username" placeholder="Your Phone">
+                                    <input type="text" name="username" id="getPhone" class="username" placeholder="Your Phone">
                                 </div>
                             </div>
                             
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <textarea name="contact_message" class="message" placeholder="Message"></textarea>
+                                    <textarea name="contact_message" id="getMessage" class="message" placeholder="Message"></textarea>
                                 </div>
                                 
                             </div>
 
                             <div class="form-group col-lg-12 text-center pt-3">
-                                <button class="theme-btn btn-style-one" type="button" id="submit" name="submit-form"><span class="btn-title">Send Message</span></button>
+                                <button class="theme-btn btn-style-one" type="button" onclick="sendMessageForContact(event)" id="submitQueryContact" name="submit-form"><span class="btn-title">Send Message</span></button>
                             </div>
                         </div>
                     </form>
@@ -361,8 +361,8 @@
             <div class="inner-container clearfix">
                 <div class="footer-nav">
                     <ul class="clearfix">
-                       <li><a href="privacy.html">Privacy Policy</a></li> 
-                       <li><a href="about-us.html">Contact</a></li> 
+                       <li><a href="https://www.geu.ac.in/content/geu/en/privacy-policy.html">Privacy Policy</a></li> 
+                       <li><a href="contact.html">Contact</a></li> 
                     </ul>
                 </div>
                 
@@ -394,7 +394,79 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaaCBm4FEmgKs5cfVrh3JYue3Chj1kJMw"></script>
 <script src="js/map-script.js"></script>
 <!--End Google Map APi-->
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBvGhhCpPZPLn_1tcVpVB6uriB-j9CTKeQ",
+    authDomain: "gems-b4c06.firebaseapp.com",
+    projectId: "gems-b4c06",
+    storageBucket: "gems-b4c06.appspot.com",
+    messagingSenderId: "204110564855",
+    appId: "1:204110564855:web:cd10287f64cbcbfd54f2f2",
+    measurementId: "G-YT0N77HH02",
+    databaseURL : "https://gems-b4c06-default-rtdb.firebaseio.com/"
+  };
+  firebase.initializeApp(firebaseConfig);
+  
+  let formMessage = firebase.database().ref('register');
+  
+  
+    const validateEmail = (email) => {
+        return email.match(
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    };
 
+  //Submit form(1.2)
+  function sendMessageForContact(e) {
+    e.preventDefault();
+    // Get Values from the DOM
+    let name = document.getElementById('getName').value;
+    let email = document.getElementById('getEmail').value;
+    let phone = document.getElementById('getPhone').value;
+    let message = document.getElementById('getMessage').value;
+
+    if(name == '' || email == '' || phone == '' || message == ''){
+      alert('Please fill all the fields');
+    }
+    else{
+        if(validateEmail(email)){
+            //send message to firebase
+            formMessage.push({
+                name: name,
+                email: email,
+                phone: phone,
+                message: message
+            });
+            sendMessage(name, email, phone,message);
+        }
+        else{
+            alert('Please enter a valid email!');
+        }
+    }
+  }
+  
+  //Send Message to Firebase(4)
+  
+  function sendMessage(name, email, phone, message) {
+    let newFormMessage = formMessage.push();
+    newFormMessage.set({
+      name: name,
+      email: email,
+      phone: phone,
+      message: message
+    },(err)=>{
+        if(err){
+            alert('Error Occured!');
+        }
+        else{
+            $("#contact-response").html("Request sent successfully!");
+        }
+    });
+    
+    
+  }
+</script>
 </body>
 </html>
 

@@ -14424,3 +14424,29 @@ Sidebar Page Container
     display: inherit !important;
   }
 }
+
+
+@media only screen and (max-width: 767px){
+  .about-first{
+    padding: 30px 30px !important;
+  }
+  .about-three{
+    padding:80px 30px !important;
+  }
+}
+.about-slide-img{
+  object-fit: contain;
+  width: 1920px !important;
+  height: 1080px !important;
+}
+.banner-spacing{
+  padding-top: 30px;
+}
+.about-section{
+  position: relative;
+  padding: 60px 0 70px;
+}
+
+ .about-three{
+  padding: 80px 110px;
+ }
