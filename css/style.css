@@ -14450,3 +14450,9 @@ Sidebar Page Container
  .about-three{
   padding: 80px 110px;
  }
+
+ .li-mission{
+    font-size: 14px;
+    margin-left: 10px;
+    list-style-type: circle;
+ }
